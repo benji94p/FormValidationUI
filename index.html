@@ -6,30 +6,41 @@
     <title></title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 
 <body>
-    <h1 id="header">Create an account</h1>
-    <form>
-        <input type="text" name="smartinput">
-        <i class="fas fa-microphone"></i>
-    </form>
-    <hr>
-
+    <h1 id="header">Join BenjaMania Today.</h1>
     <div class="form-container">
         <form>
-            <input type="text" name="firstname">
-            <input type="text" name="lastname">
-            <input type="text" name="birthday">
-            <input type="text" name="email">
-            <input type="text" name="location">
-
-            <input type="submit">
-
+            <div>
+                <label>Full Name</label>
+                <input id="full-name" name="fullname" placeholder="Your full name">
+                <span id="fullname_error" class="error_msg"></span>
+            </div>
+            <div>
+                <label>Email</label>
+                <input id="email" name="email" placeholder="Your email">
+                <span id="email_error" class="error_msg"></span>
+            </div>
+            <div>
+                <label>Address</label>
+                <input id="user_input_autocomplete_address" placeholder="Your adress">
+                <i class="fas fa-microphone"></i>
+                <span id="address_error" class="error_msg"></span>
+            </div>
+            <div>
+                <label>Password</label>
+                <input id="password" name="password" placeholder="Your password">
+                <span id="password_error" class="error_msg"></span>
+            </div>
         </form>
     </div>
-    </form>
-
+    <button id="validation">Submit</button>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
     <script src="main.js"></script>
 </body>
 </html>

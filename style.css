@@ -1,0 +1,46 @@
+body {
+    background-color: #C7E1B2;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+input {
+    width: 140%;
+}
+
+/* Layout */
+
+#header {
+    text-align: center;
+    font-size: 70px;
+    color: black;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+    padding-left: 125px;
+}
+form > div {
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+#validation {
+    margin: 0 auto;
+    display: block;
+    border-radius: 30px;
+    width: 80px;
+    height: 36px;
+    background-color: #2049B2;
+    color: white;
+}
