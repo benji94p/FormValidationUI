@@ -1,13 +1,32 @@
+@font-face {
+    font-family: futura;
+    src: url(Futura.otf);
+}
 body {
-    background-color: #C7E1B2;
     margin: 0;
     padding: 0;
     width: 100%;
     font-family: 'Montserrat', sans-serif;
 }
 
+#granim-canvas {
+    position: absolute;
+    display: block;
+    width: 100vw;
+    height: 120vh;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -100;
+
+}
+
 input {
-    width: 140%;
+    width: 214.188px;
+    height: 2rem;
+    padding: 0 0.75rem;
+    border-radius: 20px;
 }
 
 /* Layout */
@@ -16,16 +35,21 @@ input {
     text-align: center;
     font-size: 70px;
     color: black;
+    font-family: futura;
 }
-
+form {
+    margin: 0 auto;
+    width: 214.188px;
+}
 .form-container {
     display: flex;
     flex-direction: row;
     max-width: 1200px;
-    padding-left: 125px;
+    margin: 0 auto;
 }
 form > div {
-    margin: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
 }
@@ -48,8 +72,13 @@ label {
 /* UI */
 
 .validated {
-        box-shadow: 0 0 10px #5EFF82;
+        border-color: #2eec96;
 }
 .not_validated {
-        box-shadow: 0 0 10px #FF0000;
+        border-color: #f44336;
+}
+@media (max-width: 500px) {
+    #granim-canvas {
+        height: 140vh;
+    }
 }

@@ -111,6 +111,7 @@ recognition.interimResults = true;
 
 recognition.addEventListener("result", function (e) {
         let transcript = event.results[0][0].transcript;
+        document.querySelector("#user_input_autocomplete_address").value = transcript;
 
     }
 
@@ -120,4 +121,20 @@ recognition.addEventListener("result", function (e) {
 
 document.querySelector(".fa-microphone").addEventListener("click", function () {
     recognition.start();
+});
+
+/* Granim Canvas */
+
+var granimInstance = new Granim({
+   element: '#granim-canvas',
+   name: 'granim',
+   opacity: [1, 1],
+   states : {
+       "default-state": {
+           gradients: [
+               ['#834D9B', '#D04ED6'],
+               ['#1CD8D2', '#93EDC7']
+           ]
+       }
+   }
 });

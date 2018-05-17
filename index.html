@@ -3,17 +3,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign in Benjamania</title>
+    <title>Sign up Benjamania</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 
 <body>
+    <canvas id="granim-canvas"></canvas>
     <h1 id="header">Join BenjaMania Today.</h1>
     <div class="form-container">
-        <form>
-            <div>
+    <form style="
+        margin:  0 auto;
+    ">
+    <div>
                 <label>Full Name</label>
                 <input id="full-name" name="fullname" placeholder="Your full name">
                 <span id="fullname_error" class="error_msg"></span>
@@ -42,6 +45,7 @@
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPhYFyt3fOuA6-HJHrrPdOoybMxgOHFaQ&libraries=places"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/granim/1.1.0/granim.min.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
