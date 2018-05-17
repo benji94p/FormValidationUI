@@ -10,7 +10,7 @@ Features:
 
 Process
 
-![alt text](http://Process/MockupForm.png)
+![Screenshot](MockupForm.png)
 
 Technologies: HTML5, CSS3, JS.
 
