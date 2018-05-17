@@ -61,7 +61,7 @@ $("#validation").click(function() {
             let section = ["name","email","address","password"];
             let errorMessage = document.createElement("p");
             errorMessage.textContent = "The section " + section[i] + " is invalid";
-            $("#header").append(errorMessage);
+            $(".error-container").append(errorMessage);
         }
 
         else {
@@ -101,27 +101,6 @@ google.maps.event.addDomListener(window, 'load', function() {
   initializeAutocomplete('user_input_autocomplete_address');
 });
 
-/* Voice recognition address */
-
-window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-
-const recognition = new SpeechRecognition();
-
-recognition.interimResults = true;
-
-recognition.addEventListener("result", function (e) {
-        let transcript = event.results[0][0].transcript;
-        document.querySelector("#user_input_autocomplete_address").value = transcript;
-
-    }
-
-);
-
-// When button is clicked start recognition
-
-document.querySelector(".fa-microphone").addEventListener("click", function () {
-    recognition.start();
-});
 
 /* Granim Canvas */
 
