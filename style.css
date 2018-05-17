@@ -44,3 +44,12 @@ label {
     background-color: #2049B2;
     color: white;
 }
+
+/* UI */
+
+.validated {
+        box-shadow: 0 0 10px #5EFF82;
+}
+.not_validated {
+        box-shadow: 0 0 10px #FF0000;
+}

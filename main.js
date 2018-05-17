@@ -1,24 +1,57 @@
-/* Form Validation */
-let validationObject = [];
-document.querySelector(".robotvalidation").textContent = "false";
-
-//Input Checker: If Character > 1 on click input, change validationObject
+/* UI Hint */
 
 $('input').on('keyup', function(e) {
-    let idInput = e.target.id;
-    console.log(this.value.length);
-    if (validationObject)
-     if (this.value.length > 2) {
-          validationObject.push(idInput)
-          console.log(validationObject);
-     }
+    let target = e.target.id;
+    let entry = this.value;
+    let numberOfCharacter = this.value.length;
+    let guideMessage = ["The name is incorrect","The format of the mail is incorrect","The address is incorrect","The password requires a minimum of 8 character, a uppercase letter and a number"];
+
+
+    function uiValidator (cond,errormessage,guideNumber) {
+        if (e.target.classList !== 0) {
+            e.currentTarget.className = '';
+            }
+            if (cond) {
+                errormessage.textContent = "";  e.target.classList.add("validated");
+            }
+            else {
+                errormessage.textContent = guideMessage[guideNumber];
+                e.target.classList.add("not_validated");
+            }
+    }
+
+    switch(target) {
+    case "full-name":
+            let cond = numberOfCharacter > 2 && entry.includes(" ");
+            let errormessage = document.querySelector("#fullname_error");
+            uiValidator(cond,errormessage,0);
+        break;
+    case "email":
+            let cond1 = numberOfCharacter > 2 && entry.includes("@");
+            let errormessage1 = document.querySelector("#email_error");
+            uiValidator(cond1,errormessage1,1);
+
+        break;
+    case "user_input_autocomplete_address":
+            let cond2 = numberOfCharacter > 8;
+            let errormessage2 = document.querySelector("#address_error");
+            uiValidator(cond2,errormessage2,2);
+
+        break;
+    case "password":
+            let cond3 = numberOfCharacter > 8;
+            let errormessage3 = document.querySelector("#password_error");
+            uiValidator(cond3,errormessage3,3);
+
+        break;
+
+}
+
 });
 
-/* Voice robot Validation */
 
-let testWord = document.querySelector("#test-word");
-let wordRobotValidation = ["robot", "red", "black"];
-testWord.textContent = wordRobotValidation[0];
+
+/* Voice recognition address
 
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -42,3 +75,4 @@ recognition.addEventListener("result", function (e) {
 document.querySelector(".fa-microphone").addEventListener("click", function () {
     recognition.start();
 });
+*/
