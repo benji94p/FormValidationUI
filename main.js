@@ -33,7 +33,7 @@ $('input').on('keyup', function (e) {
 
             break;
         case "user_input_autocomplete_address":
-            let cond2 = numberOfCharacter > 8;
+            let cond2 = numberOfCharacter > 2;
             let errormessage2 = document.querySelector("#address_error");
             uiValidator(cond2, errormessage2, 2);
 
@@ -73,8 +73,35 @@ $("#validation").click(function() {
     }
 });
 
+/* Autofill GoogleMaps */
 
-/* Voice recognition address
+function initializeAutocomplete(id) {
+  var element = document.getElementById(id);
+  if (element) {
+    var autocomplete = new google.maps.places.Autocomplete(element, { types: ['geocode'] });
+    google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
+  }
+};
+
+function onPlaceChanged() {
+  var place = this.getPlace();
+
+  for (var i in place.address_components) {
+    var component = place.address_components[i];
+    for (var j in component.types) {  // Some types are ["country", "political"]
+      var type_element = document.getElementById(component.types[j]);
+      if (type_element) {
+        type_element.value = component.long_name;
+      }
+    }
+  }
+};
+
+google.maps.event.addDomListener(window, 'load', function() {
+  initializeAutocomplete('user_input_autocomplete_address');
+});
+
+/* Voice recognition address */
 
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -84,11 +111,7 @@ recognition.interimResults = true;
 
 recognition.addEventListener("result", function (e) {
         let transcript = event.results[0][0].transcript;
-        document.querySelector(".result").textContent = "Result: " + transcript;
-        if (transcript === testWord.textContent) {
-            validationObject.robot = true;
-            document.querySelector(".robotvalidation").textContent = "Valid"
-        }
+
     }
 
 );
@@ -98,4 +121,3 @@ recognition.addEventListener("result", function (e) {
 document.querySelector(".fa-microphone").addEventListener("click", function () {
     recognition.start();
 });
-*/
