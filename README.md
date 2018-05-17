@@ -8,6 +8,14 @@ A simple form, coded as part of training with Vanilla JS, Jquery & API's.
 * UI interactive elements
 * Responsive
 
+## Specification
+
+Technologies: HTML5, CSS3, JS.
+
+API: Google Map Places
+
+External Libraries: jQuery, granim.js.
+
 ## Process
 
 1/
@@ -24,9 +32,3 @@ Creating flowchart for the main functions of the form.
 ![Screenshot](UIhintScript.png)
 
 ![Screenshot](ValidationScript.png)
-
-Technologies: HTML5, CSS3, JS.
-
-API: Google Map Places
-
-External Libraries: jQuery, granim.js.
