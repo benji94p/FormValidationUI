@@ -21,7 +21,7 @@ Design a little mockup of the form
 
 Creating flowchart for the main functions of the form.
 
-![Screenshot](UIhintScript.png)
+![Screenshot](UIhintScript (1).png)
 
 ![Screenshot](ValidationScript.png)
 
